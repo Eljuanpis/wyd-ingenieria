@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}W&D INGENIERÍA{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a href="#inicio" class="logo">W&D </a>
+        <nav class="nav-links">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contactanos">Contáctanos</a>
+            
+        </nav>
+        <div class="hamburger">&#9776;</div> 
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>    
+</body>
+</html>

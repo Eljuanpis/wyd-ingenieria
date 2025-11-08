@@ -1,0 +1,197 @@
+/* Estilos Generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Fondo gris claro */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.main-title {
+    text-align: center;
+    margin: 40px 0 30px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+/* Header/Navbar Estilos */
+.navbar {
+    background-color: #222; 
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* --- ¡Añade esto! --- */
+    position: relative; 
+}
+
+
+.logo {
+    /* Define el tamaño y peso del texto */
+    font-size: 1.8em; 
+    font-weight: 900; /* Extra bold */
+    text-decoration: none;
+    
+    /* Aplica un degradado sobre el texto */
+    background: linear-gradient(90deg, #4CAF50, #78FF7C); /* Degradado de tu verde */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hace que el color del texto sea transparente para ver el degradado */
+    
+    /* Añade una sombra sutil para un efecto 3D/Neón ligero */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+    
+    /* Pequeña animación al pasar el mouse */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(76, 175, 80, 0.9);
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 5px 10px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Grid de Proyectos */
+.projects-grid {
+    display: grid;
+    /* 3 columnas para pantallas grandes */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Estilos de las Tarjetas */
+.card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    min-height: 250px; /* Altura mínima para que se vean uniformes */
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 1.5em;
+    margin: 15px 0 10px;
+    padding: 0 10px;
+}
+
+/* Estilo para la tarjeta de texto (Ingeniería) */
+.card-ingenieria {
+    background-color: #ffd9667a; /* Amarillo */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-ingenieria p {
+    font-size: 1.2em;
+    line-height: 1.7;
+}
+
+
+
+/* Estilo para las tarjetas con imagen */
+.card-image img {
+    width: 100%;
+    height: 100%; /* Altura fija para la imagen */
+    object-fit: cover; /* Asegura que la imagen cubra el área sin distorsión */
+    display: block;
+}
+
+.card-ingenieria img{
+    width: 10 px;
+    height: 10 px;
+    display: block; /* La clave: convierte la imagen en un elemento de bloque */
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10%;
+    
+}
+
+.card-content-text{
+    margin-top: auto; 
+}
+
+@media (max-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* 1 columna en móviles */
+    }
+    .navbar {
+        flex-direction: column;
+    }
+    .nav-links a {
+        margin: 5px 10px;
+    }
+}
+/* === Menú hamburguesa (para móviles) === */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+/* Estado inicial del menú (visible solo en pantallas grandes) */
+.nav-links {
+    display: flex;
+    align-items: center;
+}
+
+/* En pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Oculto por defecto */
+        flex-direction: column;
+        background-color: #222;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        text-align: right;
+        padding: 1rem;
+        border-radius: 0 0 0 8px;
+    }
+
+    /* Cuando se activa con el clic */
+    .nav-links.active {
+        display: flex;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links a {
+        display: block;
+        margin: 10px 0;
+        padding: 10px;
+    }
+}

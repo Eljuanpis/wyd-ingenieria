@@ -1,0 +1,303 @@
+/* style.css */
+
+/* === Estilos Generales === */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+.content-section {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin-top: auto;
+    text-align: center;
+}
+
+/* === Encabezado (Menú) === */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* Menú fijo al hacer scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+/* === Estilo del Logo W&D === */
+.logo {
+    /* Define el tamaño y peso del texto */
+    font-size: 1.8em; 
+    font-weight: 900; /* Extra bold */
+    text-decoration: none;
+    
+    /* Aplica un degradado sobre el texto */
+    background: linear-gradient(90deg, #4CAF50, #78FF7C); /* Degradado de tu verde */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent; /* Hace que el color del texto sea transparente para ver el degradado */
+    
+    /* Añade una sombra sutil para un efecto 3D/Neón ligero */
+    text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
+    
+    /* Pequeña animación al pasar el mouse */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+    text-shadow: 0 0 8px rgba(76, 175, 80, 0.9);
+}
+/* ========================= */
+
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #4CAF50; /* Color verde al pasar el mouse */
+}
+
+/* === Menú Hamburguesa (Oculto por defecto) === */
+.hamburger {
+    display: none; 
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* === SECCIÓN HERO === */
+.hero-section {
+    position: relative; 
+    height: 60vh; /* Altura que le diste */
+    overflow: hidden; 
+}
+
+.hero-content {
+    /* Asegura que el contenedor base tenga 100% de alto */
+    width: 100%;
+    height: 100%; 
+    position: relative;
+}
+
+.hero-background-image {
+    width: 100%;
+    height: 100%;
+    /* CLAVE: Estira la imagen para llenar el contenedor */
+    object-fit: cover; 
+    
+    /* CLAVE: Posiciona la imagen respecto a .hero-content */
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1; 
+    
+
+}
+
+.hero-text-overlay {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+/* === Estilos para Proyectos (Contenedor del Título y Tarjeta) === */
+
+/* Contenedor que agrupa el Título (H3) y la Tarjeta (Card) */
+.project-item {
+    width: 300px; /* Igual al ancho de la tarjeta */
+    margin-bottom: 20px; /* Espacio entre filas */
+    text-align: center;
+}
+
+/* Estilo para el Título fijo */
+.project-item h3 {
+    margin: 0 0 10px 0; /* Espacio entre el título y la tarjeta */
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Estilos para las imágenes DENTRO de las tarjetas */
+.card-image {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+    opacity: 0.8; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 0;
+}
+
+/* Ajuste del frente de la tarjeta (ahora solo contiene la imagen de fondo) */
+.card-front {
+    /* Mantenemos el fondo azul como respaldo */
+    background-color: #2195f39c; 
+    position: relative;
+    z-index: 1; 
+    /* Aseguramos que la vista frontal ocupe el espacio */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ELIMINAMOS REGLA: .card-front h3 { ... } ya que el h3 está fuera de la tarjeta. */
+
+
+/* === Formulario de Contacto === */
+.contact-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.contact-form label, .contact-form input, .contact-form textarea, .contact-form select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contact-form input[type="text"], 
+.contact-form input[type="email"],
+.contact-form input[type="text"], 
+.contact-form select,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.submit-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #45a049;
+}
+
+/* === Estilos de Tarjetas (Efecto Flip RESTAURADO) === */
+.project-container {
+    /* Usamos flex para distribuir los project-item (título + card) */
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    width: 300px;
+    height: 200px;
+    perspective: 1000px; 
+    border-radius: 20px; /* Se mantiene el border-radius */
+    overflow: hidden;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* El efecto de volteo al pasar el mouse */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; 
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    border-radius: 8px; /* El radio interior de la cara */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card-back {
+    background-color: #ffc1075b; 
+    color: #333;
+    transform: rotateY(180deg); 
+}
+
+.card-back a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* === Media Queries (Responsiveness) === */
+@media (max-width: 768px) {
+    /* Oculta los links del menú y muestra el hamburguesa */
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px; 
+        left: 0;
+        background-color: #333;
+        padding-bottom: 10px;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; 
+    }
+
+    .nav-links a {
+        margin: 10px 0;
+        padding: 10px;
+        border-top: 1px solid #444;
+    }
+
+    .hamburger {
+        display: block; 
+    }
+    
+    .project-container {
+        flex-direction: column; 
+        align-items: center;
+    }
+    
+    /* Aseguramos que el contenedor del ítem también use todo el ancho en móvil */
+    .project-item {
+        width: 90%; /* O un ancho que se adapte mejor a la pantalla pequeña */
+        max-width: 300px;
+    }
+}

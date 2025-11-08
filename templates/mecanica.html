@@ -1,0 +1,94 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W&D Mecanica</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a href="" class="logo">W&D</a>
+       <nav class="nav-links">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('ingenieria') }}">Ingeniería</a>
+        <a href="{{ url_for('montajes') }}">Montajes</a>
+        <a href="{{ url_for('mecanica') }}">Mecánica</a>
+        <a href="{{ url_for('metalmecanica') }}">Metalmecánica</a>
+        <a href="{{ url_for('energia') }}">Energía</a>
+        <a href="{{ url_for('construccion') }}">Construcción</a>
+        </nav>
+        <div class="hamburger">&#9776;</div> 
+    </header>
+<main class="container">
+    <h1 class="main-title">Proyectos De Mecanica</h1>
+
+    <section class="projects-grid">  
+        <div class="card card-ingenieria">
+            <div class="card-content-text">
+                <h2>Ensamblaje Profesional de Troquelería Pesada</h2>
+                <img src="{{ url_for('static', filename='images/mecanica_1.jpg') }}" alt="Eléctrico" class="card-image">
+            <p>Nuestro equipo de expertos en mecánica industrial se especializa en el mantenimiento preventivo y correctivo 
+                de maquinaria pesada y troqueles de precisión. En la imagen, nuestro personal cualificado realiza el ensamblaje
+                 meticuloso de componentes internos, asegurando que cada pieza funcione con la exactitud requerida por la industria
+                  manufacturera</p>
+            </div>
+                      
+        </div>
+
+       <div class="card card-ingenieria">
+            <div class="card-content-text">
+                <h2>Expertos en Desensamblaje y Mantenimiento de Componentes</h2>
+                <img src="{{ url_for('static', filename='images/mecanica_2.jpg') }}" alt="Eléctrico" class="card-image">
+            </div>
+            <p>Nos especializamos en el mantenimiento correctivo y reacondicionamiento total de equipos mecánicos. 
+                nuestra capacidad para realizar el desensamblaje completo (despiece) de componentes, 
+                permitiendo la inspección detallada de cada pieza (engranajes, ejes, rodamientos, carcasas) y asegurando 
+                que cada reparación se realice con la máxima precisión y las herramientas adecuadas</p> 
+        </div>
+
+
+        <div class="card card-ingenieria">
+            <div class="card-content-text">
+                <h2>Mantenimiento Industrial con Ensayos No Destructivos</h2>
+                <img src="{{ url_for('static', filename='images/mecanica_3.png') }}" alt="Eléctrico" class="card-image">
+            </div>
+            <p>Garantizamos la máxima fiabilidad de sus equipos rotativos mediante inspecciones y diagnósticos avanzados. 
+                aplicación de líquidos penetrantes (ensayo no destructivo) en los componentes de un rotor
+                 industrial para detectar fisuras microscópicas. Aseguramos que cada mantenimiento cumpla con los estándares de 
+                 calidad más exigentes</p>
+                
+        </div>
+
+
+        <div class="card card-ingenieria">
+            <div class="card-content-text">
+                <h2>Maximizando la eficiencia energética de su planta industrial</h2>
+                <img src="{{ url_for('static', filename='images/mecanica_4.png') }}" alt="Eléctrico" class="card-image">
+            </div>
+            <p>Nos especializamos en el mantenimiento preventivo, correctivo y overhaul (revisión mayor) de turbomaquinaria
+                 (turbinas de gas, vapor y compresores), calderas y sistemas auxiliares de generación de energía. Nuestro enfoque 
+                 técnico garantiza la máxima disponibilidad y eficiencia de sus activos críticos, extendiendo su vida útil y asegurando 
+                 una operación segura y dentro de normativa</p>
+                
+        </div>
+
+
+    </section>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+});
+</script>
+
+</body>
+</html>

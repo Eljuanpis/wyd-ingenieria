@@ -1,0 +1,79 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>W&D Contruccion</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header class="navbar">
+        <a href="" class="logo">W&D</a>
+       <nav class="nav-links">
+        <a href="{{ url_for('index') }}">Inicio</a>
+        <a href="{{ url_for('ingenieria') }}">Ingeniería</a>
+        <a href="{{ url_for('montajes') }}">Montajes</a>
+        <a href="{{ url_for('mecanica') }}">Mecánica</a>
+        <a href="{{ url_for('metalmecanica') }}">Metalmecánica</a>
+        <a href="{{ url_for('energia') }}">Energía</a>
+        <a href="{{ url_for('construccion') }}">Construcción</a>
+        </nav>
+        <div class="hamburger">&#9776;</div> 
+    </header>
+<main class="container">
+    <h1 class="main-title">Proyectos Civilies</h1>
+
+    <section class="projects-grid">  
+        <div class="card card-ingenieria">
+            <div class="card-content-text">
+                <h2>fundición de planchas</h2>
+                <img src="{{ url_for('static', filename='images/construccion_1.jpg') }}" alt="Eléctrico" class="card-image">
+            <p>Ofrecemos servicios expertos en la construcción de elementos de concreto, abarcando desde la preparación del 
+                terreno y conformación de bases viales hasta la ejecución de losas y placas estructurales. Contamos con el conocimiento
+                 técnico y la maquinaria necesaria para realizar el armado de refuerzo de acero (mallas y varillas) y el vaciado profesional
+                  de concreto hidráulico, garantizando cimientos y pavimentos de alta resistencia, durabilidad y precisión, optimizando la ejecución 
+                  de múltiples placas de manera eficiente.</p>
+            </div>
+                      
+        </div>
+
+       <div class="card card-ingenieria">
+            <div class="card-content-text">
+                <h2>Preparacion de terreno para construccion</h2>
+                <img src="{{ url_for('static', filename='images/construccion_2.png') }}" alt="Eléctrico" class="card-image">
+                <p>Ofrecemos servicios integrales de preparación de terreno para construcción. Contamos con el conocimiento técnico, 
+            experiencia comprobada y maquinaria pesada de última generación para garantizar que su proyecto comience sobre una base 
+            sólida y segura</p> 
+            </div>
+        </div>
+
+
+        <div class="card card-ingenieria">
+            <div class="card-content-text">
+                <h2>construcción de vías y calles de concreto hidráulico</h2>
+                <img src="{{ url_for('static', filename='images/construccion_3.jpg') }}" alt="Eléctrico" class="card-image">
+            </div>
+            <p>Nos especializamos en la preparación de terrenos y plataformas para la construcción de vías y calles de concreto
+             hidráulico (pavimentos rígidos). Contamos con la experiencia y la maquinaria necesaria para ejecutar todas las fases del proceso</p>
+                
+        </div>
+
+
+    </section>
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+
+    if (hamburger && navLinks) {
+        hamburger.addEventListener('click', function() {
+            navLinks.classList.toggle('active');
+        });
+    }
+});
+</script>
+
+</body>
+</html>
