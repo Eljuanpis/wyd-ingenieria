@@ -12,7 +12,7 @@ app = Flask(__name__)
 RECIPIENT_EMAIL = 'juanmanuelcastro011@gmail.com'
 
 # Servidor SMTP de Gmail
-SMTP_SERVER = 'smtp.gmail.com'
+SMTP_SERVER = 'smtp.gmail.com' 
 SMTP_PORT = 587
 
 # El correo que usas para ENVIAR los mensajes (debe ser un correo real con App Password)
