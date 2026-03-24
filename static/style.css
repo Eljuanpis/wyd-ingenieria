@@ -1,8 +1,6 @@
-/* style.css */
-
 /* === Estilos Generales === */
 body {
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
@@ -10,14 +8,70 @@ body {
     scroll-behavior: smooth;
 }
 
-.content-section {
-    padding: 40px 20px;
-    max-width: 1200px;
-    margin-top: auto;
-    text-align: center;
+/* === SECCIÓN HERO (Corregida y sin repeticiones) === */
+.hero-section {
+    position: relative; 
+    width: 100%;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    overflow: hidden; 
+    min-height: 30vh; /* Altura mínima flexible */
 }
 
-/* === Encabezado (Menú) === */
+.hero-background-image {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    object-fit: contain;
+}
+
+/* === Botón de WhatsApp Flotante === */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    color: white;
+}
+
+/* Media Query para móviles */
+@media (max-width: 768px) {
+    .hero-background-image {
+        max-width: 90%;
+    }
+    .hero-section {
+        padding: 10px 0;
+    }
+}
+
+.whatsapp-icon {
+    width: 35px;
+    height: 35px;
+}
+
+/* === Navbar y otros estilos que ya tenías (se mantienen igual) === */
 .navbar {
     background-color: #333;
     color: white;
@@ -25,34 +79,21 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: sticky; /* Menú fijo al hacer scroll */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* === Estilo del Logo W&D === */
 .logo {
-    /* Define el tamaño y peso del texto */
     font-size: 1.8em; 
-    font-weight: 900; /* Extra bold */
+    font-weight: 900;
     text-decoration: none;
-    
-    /* Aplica un degradado sobre el texto */
-    background: linear-gradient(90deg, #4CAF50, #78FF7C); /* Degradado de tu verde */
+    background: linear-gradient(90deg, #4CAF50, #78FF7C);
     -webkit-background-clip: text;
     background-clip: text;
-    color: transparent; /* Hace que el color del texto sea transparente para ver el degradado */
-    
-    /* Añade una sombra sutil para un efecto 3D/Neón ligero */
+    color: transparent;
     text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
-    
-    /* Pequeña animación al pasar el mouse */
     transition: transform 0.3s ease-in-out;
-}
-
-.logo:hover {
-    transform: scale(1.05);
-    text-shadow: 0 0 8px rgba(76, 175, 80, 0.9);
 }
 /* ========================= */
 
@@ -90,18 +131,10 @@ body {
 }
 
 .hero-background-image {
-    width: 100%;
-    height: 100%;
-    /* CLAVE: Estira la imagen para llenar el contenedor */
-    object-fit: cover; 
-    
-    /* CLAVE: Posiciona la imagen respecto a .hero-content */
-    position: absolute; 
-    top: 0;
-    left: 0;
-    z-index: 1; 
-    
-
+    width: 100%;       /* Ocupa todo el ancho disponible */
+    height: auto;      /* Mantiene la proporción */
+    max-height: 50vh;  /* Evita que sea demasiado alta en móviles */
+    object-fit: contain; /* Asegura que se vea toda la imagen sin cortarse */
 }
 
 .hero-text-overlay {

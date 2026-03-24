@@ -4,17 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}W&D INGENIERÍA{% endblock %}</title>
+    
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header class="navbar">
-        <a href="#inicio" class="logo">W&D </a>
+        <a href="{{ url_for('index') }}#inicio" class="logo">W&D</a>
         <nav class="nav-links">
-            <a href="#inicio">Inicio</a>
-            <a href="#nosotros">Nosotros</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contactanos">Contáctanos</a>
-            
+            <a href="{{ url_for('index') }}#inicio">Inicio</a>
+            <a href="{{ url_for('index') }}#nosotros">Nosotros</a>
+            <a href="{{ url_for('index') }}#proyectos">Proyectos</a>
+            <a href="{{ url_for('index') }}#contactanos">Contáctanos</a>
         </nav>
         <div class="hamburger">&#9776;</div> 
     </header>
@@ -24,8 +27,12 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Mi Empresa. Todos los derechos reservados.</p>
+        <p>&copy; 2026 W&D INGENIERÍA S.A.S. Todos los derechos reservados.</p>
     </footer>
+
+    <a href="https://wa.me/573138318999?text=Hola,%20vengo%20de%20la%20página%20web%20de%20W&D%20Ingeniería" class="whatsapp-float" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" class="whatsapp-icon" alt="WhatsApp">
+    </a>
 
     <script>
         document.querySelector('.hamburger').addEventListener('click', function() {

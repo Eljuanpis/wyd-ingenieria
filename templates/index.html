@@ -1,76 +1,88 @@
 {% extends "base.html" %}
-{% block title %}W&D INGENIERÍA{% endblock %}
+
+{% block title %}W&D INGENIERÍA - Tu Socio de Principio a Fin{% endblock %}
+
 {% block content %}
+
 <section id="inicio" class="hero-section">
     <div class="hero-content">
         <img src="{{ url_for('static', filename='images/Logowd.jpeg') }}" 
-             alt="Fondo de Soluciones de Ingeniería" 
+             alt="Logo W&D Ingeniería" 
              class="hero-background-image">
         
         <div class="hero-text-overlay">
-            <h1>Tu Socio De Principio A fin</h1>
-            <p> ¡Cotiza con nosotros!</p>
+            <h1>Tu Socio De Principio A Fin</h1>
+            <p>¡Cotiza con nosotros!</p>
         </div>
     </div>
 </section>
-<link rel="icon" type="image/png" href="{{ url_for('static', filename='favicon.png') }}">
+
 <section id="nosotros" class="content-section">
     <h2>Nosotros / Quiénes Somos</h2>
-    <h2>🏗️ Nosotros: W&D INGENIERÍA - "Tu socio de principio a fin"
-    es una empresa especializada en brindar soluciones integrales de ingeniería,
-    montaje, construcción, mantenimiento y energía .<br>
-    <br
-
-Nuestra misión es ser "Su Socio de Principio a Fin", acompañando a nuestros clientes desde la planificación y diseño, hasta la ejecución y el mantenimiento especializado de sus proyectos. Contamos con personal profesional experto en diversas disciplinas para garantizar la calidad, factibilidad y eficiencia en cada servicio que ofrecemos</h2>
-    <p>W&D INGENIERÍA se compromete a entregar trabajos con la más alta calidad y precisión, siendo su aliado de confianza para el éxito de sus proyectos.</p>
+    <div class="nosotros-texto">
+        <h3>🏗️ W&D INGENIERÍA</h3>
+        <p>
+            Es una empresa especializada en brindar soluciones integrales de ingeniería,
+            montaje, construcción, mantenimiento y energía.
+        </p>
+        <p>
+            Nuestra misión es ser <strong>"Su Socio de Principio a Fin"</strong>, acompañando a nuestros clientes desde la planificación y diseño, 
+            hasta la ejecución y el mantenimiento especializado de sus proyectos. Contamos con personal profesional experto 
+            en diversas disciplinas para garantizar la calidad, factibilidad y eficiencia en cada servicio que ofrecemos.
+        </p>
+        <p>W&D INGENIERÍA se compromete a entregar trabajos con la más alta calidad y precisión, siendo su aliado de confianza para el éxito de sus proyectos.</p>
+    </div>
 </section>
 
 <section id="proyectos" class="content-section">
-    <h2>Proyectos</h2>
+    <h2>Nuestros Servicios</h2>
     <div class="project-container">
+        
         <div class="project-item">
-            <h3>Ingenieria</h3>
+            <h3>Ingeniería</h3>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/ingenieria.jpg') }}" alt="Mecánica" class="card-image">
+                        <img src="{{ url_for('static', filename='images/ingenieria.jpg') }}" alt="Ingeniería" class="card-image">
                     </div>
                     <div class="card-back">
-    <p>Planificación, estudios, diseño, mejora, interventoria, maniobras e izajes, comissioning, en obras civiles, metalmecánicas y de mantenimiento</p>
-    <a href="{{ url_for('ingenieria') }}">Ver más</a>
-</div>
+                        <p>Planificación, estudios, diseño, mejora, interventoría, maniobras e izajes en obras civiles y mantenimiento.</p>
+                        <a href="{{ url_for('ingenieria') }}">Ver más</a>
+                    </div>
                 </div>
             </div>
         </div>
+
         <div class="project-item">
             <h3>Montajes</h3>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/montaje.jpg') }}" alt="Eléctrico" class="card-image">
+                        <img src="{{ url_for('static', filename='images/montaje.jpg') }}" alt="Montajes" class="card-image">
                     </div>
                     <div class="card-back"> 
-                        <p>Montaje de proyectos metalemecánicos, eléctricos y de generación para el sector industrial, pipelines, con estructura pesada o liviana, en baja y media tensión</p>
+                        <p>Montaje de proyectos metalmecánicos, eléctricos y pipelines para el sector industrial.</p>
                         <a href="{{ url_for('montajes') }}">Ver más</a>
-
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="project-item">
-            <h3>Mecanica</h3>
+            <h3>Mecánica</h3>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/mecanica.jpg') }}" alt="Metalmecánica" class="card-image">
+                        <img src="{{ url_for('static', filename='images/mecanica.jpg') }}" alt="Mecánica" class="card-image">
                     </div>
                     <div class="card-back">
-                        <p>Personal profesional para el mantenimiento TPM, correctivo, preventivo, electrica, mecanico, de soldadura y locativa, en el sector industrial, automotriz, oil and gas, turistico y del agro</p>
+                        <p>Mantenimiento TPM, correctivo y preventivo en sectores industrial, automotriz y oil & gas.</p>
                         <a href="{{ url_for('mecanica') }}">Ver más</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="project-item">
             <h3>Metalmecánica</h3>
             <div class="card">
@@ -79,21 +91,22 @@ Nuestra misión es ser "Su Socio de Principio a Fin", acompañando a nuestros cl
                         <img src="{{ url_for('static', filename='images/metalmecanica.jpg') }}" alt="Metalmecánica" class="card-image">
                     </div>
                     <div class="card-back">
-                        <p>Diseño y fabricación de estructuras metálicas, soldadura especializada y piezas a medida con alta precisión.</p>
+                        <p>Diseño y fabricación de estructuras metálicas y piezas a medida con alta precisión.</p>
                         <a href="{{ url_for('metalmecanica') }}">Ver más</a>
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="project-item">
-            <h3>Energia</h3>
+            <h3>Energía</h3>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/energia.jpg') }}" alt="Metalmecánica" class="card-image">
+                        <img src="{{ url_for('static', filename='images/energia.jpg') }}" alt="Energía" class="card-image">
                     </div>
                     <div class="card-back">
-                        <p>Comisionamiento, instalacion y solucion de problemas en sisternas de generacion, respaldo y distribucion, en media y baja tensión</p>
+                        <p>Instalación y solución en sistemas de generación y distribución en media y baja tensión.</p>
                         <a href="{{ url_for('energia') }}">Ver más</a>
                     </div>
                 </div>
@@ -101,47 +114,51 @@ Nuestra misión es ser "Su Socio de Principio a Fin", acompañando a nuestros cl
         </div>
 
         <div class="project-item">
-            <h3>Construccion</h3>
+            <h3>Construcción</h3>
             <div class="card">
                 <div class="card-inner">
                     <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/construccion.jpeg') }}" alt="Metalmecánica" class="card-image">
+                        <img src="{{ url_for('static', filename='images/construccion.jpeg') }}" alt="Construcción" class="card-image">
                     </div>
                     <div class="card-back">
-                        <p>Obras civiles industriales y residenciales, obras en concreto, metalmecânica y/o mixtas, tipo pesadas o livianas</p>
+                        <p>Obras civiles industriales y residenciales, concreto y estructuras mixtas pesadas o livianas.</p>
                         <a href="{{ url_for('construccion') }}">Ver más</a>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
+
+    </div>
 </section>
 
 <section id="contactanos" class="content-section">
     <h2>Contáctanos y Pide tu Cotización</h2>
     <form action="{{ url_for('contactanos') }}" method="POST" class="contact-form">
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
 
         <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
 
         <label for="asunto">Asunto:</label>
         <input type="text" id="asunto" name="asunto" required>
         
-        <label for="cotizacion">Tipo de Cotización:</label>
+        <label for="cotizacion">Área de Interés:</label>
         <select id="cotizacion" name="cotizacion" required>
             <option value="" disabled selected>Seleccione un área</option>
+            <option value="ingenieria">Ingeniería</option>
             <option value="mecanica">Mecánica</option>
-            <option value="electrico">Eléctrico</option>
-            <option value="metalmecanico">Metalmecánico</option>
+            <option value="electrico">Eléctrico / Energía</option>
+            <option value="metalmecanico">Metalmecánico / Montajes</option>
+            <option value="construccion">Construcción</option>
             <option value="otro">Otro / General</option>
         </select>
 
         <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="6" required></textarea>
+        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
 
         <button type="submit" class="submit-button">Enviar Solicitud</button>
     </form>
 </section>
+
 {% endblock %}
