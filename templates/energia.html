@@ -1,77 +1,23 @@
-<!DOCTYPE html> 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W&D Energia</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <header class="navbar">
-        <a href="" class="logo">W&D</a>
-       <nav class="nav-links">
-        <a href="{{ url_for('index') }}">Inicio</a>
-        <a href="{{ url_for('ingenieria') }}">Ingeniería</a>
-        <a href="{{ url_for('montajes') }}">Montajes</a>
-        <a href="{{ url_for('mecanica') }}">Mecánica</a>
-        <a href="{{ url_for('metalmecanica') }}">Metalmecánica</a>
-        <a href="{{ url_for('energia') }}">Energía</a>
-        <a href="{{ url_for('construccion') }}">Construcción</a>
-        </nav>
-        <div class="hamburger">&#9776;</div> 
-    </header>
+{% extends "base.html" %}
+
+{% block title %}W&D Energía - Proyectos{% endblock %}
+
+{% block content %}
 <main class="container">
-    <h1 class="main-title">Proyectos Energeticos</h1>
+    <h1 class="main-title">Proyectos Energéticos</h1>
 
     <section class="projects-grid">  
+        <div class="card-ingenieria">
+            <h2>Instalaciones Eléctricas</h2>    
+            <img src="{{ url_for('static', filename='images/electrico_1.jpg') }}" alt="Eléctrico">  
+            <p>Ofrecemos servicios integrales de instalaciones eléctricas, cumplimiento de RETIE...</p>                  
+        </div>
 
         <div class="card-ingenieria">
-            <div class="card-content-text">
-                <h2>instalaciones eléctricas</h2>    
-            <img src="{{ url_for('static', filename='images/electrico_1.jpg') }}" alt="Eléctrico" class="card-image">  
-            </div>
-            <p>Ofrecemos servicios integrales de instalaciones eléctricas, incluyendo el montaje y cableado de tableros
-                 de distribución (principales y seccionales). Nuestro personal cualificado garantiza la correcta instalación
-                  de interruptores termomagnéticos, diferenciales y demás componentes, cumpliendo estrictamente con la normativa
-                   vigente (RETIE, IEC, etc.)</p>                  
+            <h2>Mantenimiento de Tableros</h2>
+            <img src="{{ url_for('static', filename='images/energia_1.jpg') }}" alt="Energía">
+            <p>Servicio de mantenimiento preventivo de tableros eléctricos y pruebas de funcionamiento...</p> 
         </div>
-
-       <div class="card-ingenieria">
-            <div class="card-content-text">
-                <h2>Mantenimiento de tableros electricos</h2>
-            </div>
-            <img src="{{ url_for('static', filename='images/energia_1.jpg') }}" alt="Eléctrico" class="">
-            <p>Servicio de mantenimiento preventivo de tableros eléctricos. Nuestro equipo realiza inspecciones
-                 exhaustivas, limpieza de componentes, reapriete de conexiones y pruebas de funcionamiento para prevenir fallas, 
-                 sobrecalentamientos y riesgos eléctricos, garantizando un sistema seguro y eficiente</p> 
-        </div>
-
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Mantenimiento Integral</h2>
-                <img src="{{ url_for('static', filename='images/energia_2.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>Nos especializamos en el mantenimiento integral de equipos de generación de energía. Nuestra experiencia abarca sistemas
-                 a diésel y gasolina, incluyendo revisiones de motor, sistema de combustible, alternador, y sistemas de control. Ofrecemos 
-                 pólizas de mantenimiento diseñadas para mantener su equipo listo para operar en cualquier emergencia</p>
-                
-        </div>
-
     </section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    }
-});
-</script>
-
-</body>
-</html>
+{% endblock %}

@@ -1,92 +1,41 @@
-<!DOCTYPE html> 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W&D Ingeniería</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <header class="navbar">
-        <a href="" class="logo">W&D</a>
-       <nav class="nav-links">
-        <a href="{{ url_for('index') }}">Inicio</a>
-        <a href="{{ url_for('ingenieria') }}">Ingeniería</a>
-        <a href="{{ url_for('montajes') }}">Montajes</a>
-        <a href="{{ url_for('mecanica') }}">Mecánica</a>
-        <a href="{{ url_for('metalmecanica') }}">Metalmecánica</a>
-        <a href="{{ url_for('energia') }}">Energía</a>
-        <a href="{{ url_for('construccion') }}">Construcción</a>
-        </nav>
-        <div class="hamburger">&#9776;</div> 
-    </header>
+{% extends "base.html" %}
+{% block title %}W&D - Ingeniería{% endblock %}
+{% block content %}
 <main class="container">
-    <h1 class="main-title">Proyectos De Ingenieria</h1>
-
-    <section class="projects-grid">  
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Logística y Posicionamiento de Cargas Críticas con Precisión</h2>
-                <img src="{{ url_for('static', filename='images/movimientos.jpg') }}" alt="Eléctrico" class="card-image">
-            <p>Nos especializamos en el montaje industrial y posicionamiento de equipos pesados. Disponemos de una flota 
-                versátil de grúas telescópicas y personal calificado para realizar el izaje de estructuras modulares, maquinaria
-                 y componentes de infraestructura. Aseguramos que cada maniobra se ejecute sobre superficies estables y con la planificación
-                  exhaustiva requerida, desde el transporte hasta la colocación final</p>
-            </div>                   
+    <h1 class="main-title">Proyectos De Ingeniería</h1>
+    <section class="projects-grid">
+        <div class="card-ingenieria">
+            <h2>Logística y Cargas Críticas</h2>
+            <p>Optimizamos cada movimiento con precisión y control</p>
+            <img src="{{ url_for('static', filename='images/ingenieria001.jpg') }}" alt="Ingeniería">
+            <p> - Nos especializamos en el posicionamiento 
+                de equipos para montaje industrial mediante sistemas de gateo y desplazamiento, integrando planificación 
+                técnica detallada y ejecución segura en maniobras de alta complejidad.
+                <br>
+                - Reducimos tiempos operativos, mitigamos riesgos críticos y garantizamos el cumplimiento 
+                normativo en cada fase del proceso, asegurando eficiencia, confiabilidad y resultados de alto nivel para su operación.</p>
         </div>
-
-       <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Expertos en Maniobras de Izaje y Montaje Pesado</h2>
-                <img src="{{ url_for('static', filename='images/izajes.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>montaje industrial y posicionamiento de equipos pesados. Disponemos de una flota versátil de grúas telescópicas 
-                y personal calificado (riggers y operadores certificados) para realizar el izaje de estructuras modulares, maquinaria
-                 y componentes de infraestructura. Aseguramos que cada maniobra se ejecute sobre superficies estables y con la planificación 
-                 exhaustiva requerida, desde el transporte hasta la colocación fina</p> 
+        <div class="card-ingenieria">
+            <h2>Interventoría Especializada</h2>
+            <p>Interventoría a obras civiles y bases de precisión.</p>
+            <img src="{{ url_for('static', filename='images/interventoria001.jpg') }}" alt="Interventoría">
+            <p>Supervisamos y controlamos cada etapa constructiva, asegurando el cumplimiento de especificaciones técnicas, 
+                tolerancias de precisión y normativas aplicables. Garantizamos calidad estructural, correcta ejecución y confiabilidad</p>
         </div>
+        <div class="card-ingenieria">
+            <h2>Expertos en Maniobras de Izaje y Montaje Pesado</h2>
+            <p>seguridad y control en cada maniobra</p>
+            <img src="{{ url_for('static', filename='images/izajes001.jpg') }}" alt="Interventoría">
+            <p>Especialistas Ejecutando montajes industriales y posicionamientos de equipos pesados 
+                con grúas telescópicas y personal certificado. Garantizamos planificación técnica, superficies 
+                seguras y colocación precisa en cada etapa del proceso</p>
 
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Interventoría profesional para una ejecución sin riesgos</h2>
-                <img src="{{ url_for('static', filename='images/interventoria.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>interventoría para garantizar la ejecución exitosa y transparente de sus proyectos. Actuamos como los ojos del cliente 
-                en campo, realizando un seguimiento técnico, administrativo y financiero exhaustivo. Nuestro equipo se encarga de verificar
-                 el cumplimiento de planos, especificaciones técnicas, normativas vigentes y estándares de calidad, asegurando que su inversión
-                  se materialice con la eficiencia, eficacia y seguridad requeridas, de principio a fin</p>
-                
         </div>
-
-
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Ingeniería de Proyectos: Cimientos Sólidos para la Construcción</h2>
-                <img src="{{ url_for('static', filename='images/ingenieria.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>Ofrecemos gestión integral de proyectos de ingeniería, desde la viabilidad inicial hasta la puesta en marcha. 
-                Nuestro equipo supervisa la construcción y el progreso para asegurar que se cumplan los plazos y los estándares de calidad.
-                 Actuamos como consultores expertos, identificando riesgos y optimizando procesos para reducir costos y garantizar un resultado
-                  exitoso</p>
-                
-        </div>
-
-
+        <div class="card-ingenieria">
+            <h2>Ingeniería de Proyectos: Cimientos Sólidos para la Construcción</h2>
+            <img src="{{ url_for('static', filename='images/ingenieros.jpg') }}" alt="Interventoría">
+            <p>Ofrecemos gestión integral de proyectos de ingeniería, desde estudios de viabilidad y planificación hasta la ejecución y puesta en marcha, asegurando el control técnico, cumplimiento de plazos y altos estándares de calidad en cada fase del desarrollo.</p>
+        </div>                
     </section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    }
-});
-</script>
-
-</body>
-</html>
+{% endblock %}

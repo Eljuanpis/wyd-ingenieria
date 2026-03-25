@@ -1,93 +1,29 @@
-<!DOCTYPE html> 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W&D Metalmecánica</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <header class="navbar">
-        <a href="" class="logo">W&D</a>
-       <nav class="nav-links">
-        <a href="{{ url_for('index') }}">Inicio</a>
-        <a href="{{ url_for('ingenieria') }}">Ingeniería</a>
-        <a href="{{ url_for('montajes') }}">Montajes</a>
-        <a href="{{ url_for('mecanica') }}">Mecánica</a>
-        <a href="{{ url_for('metalmecanica') }}">Metalmecánica</a>
-        <a href="{{ url_for('energia') }}">Energía</a>
-        <a href="{{ url_for('construccion') }}">Construcción</a>
-        </nav>
-        <div class="hamburger">&#9776;</div> 
-    </header>
+{% extends "base.html" %}
+
+{% block title %}W&D - Metalmecánica{% endblock %}
+
+{% block content %}
 <main class="container">
     <h1 class="main-title">Proyectos Metalmecánicos</h1>
 
     <section class="projects-grid">  
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Reparación y Mantenimiento de Calderas con Estándares de Calidad</h2>
-                <img src="{{ url_for('static', filename='images/metalmecanica_1.png') }}" alt="Eléctrico" class="card-image">
-            <p>Somos especialistas en soldadura industrial certificada y la reparación de equipos críticos. La imagen capta a 
-                uno de nuestros soldadores expertos realizando trabajos de alta exigencia en la reparación de la fluxería de una 
-                caldera industrial. Contamos con personal cualificado y procedimientos homologados para garantizar la integridad y 
-                seguridad de sus recipientes a presión</p>
-            </div>
-                      
+        <div class="card-ingenieria">
+            <h2>Mantenimiento de Calderas</h2>
+            <img src="{{ url_for('static', filename='images/metalmecanica_1.jpg') }}" alt="Calderas">
+            <p>Reparación y mantenimiento de calderas con estándares de alta calidad, asegurando eficiencia y seguridad operativa en sistemas de vapor.</p>
         </div>
 
-       <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Instalación y Mantenimiento de Líneas de Proceso</h2>
-                <img src="{{ url_for('static', filename='images/metalmecanica_2.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>Nos especializamos en el montaje y soldadura de sistemas de tuberías industriales (piping). En entornos operativos 
-                complejos como el que se muestra, nuestro personal certificado instala y une tuberías según especificaciones exactas, 
-                asegurando sistemas robustos, sin fugas y duraderos para la transferencia de fluidos críticos</p> 
+        <div class="card-ingenieria">
+            <h2>Soldadura en Posición 6G</h2>
+            <img src="{{ url_for('static', filename='images/metalmecanica_3.jpg') }}" alt="Soldadura 6G">
+            <p>Expertos en soldadura de tuberías y componentes críticos en posiciones desafiantes, garantizando integridad estructural total.</p>
         </div>
 
-
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Uniones Soldadas Críticas, Ejecutadas con Precisión Maestra</h2>
-                <img src="{{ url_for('static', filename='images/metalmecanica_3.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>Contamos con un equipo de soldadores altamente calificados y certificados bajo estándares internacionales (AWS/ASME)
-                 para ejecutar trabajos en la exigente posición 6G. Esta certificación garantiza que nuestro personal puede realizar
-                  soldaduras de la más alta calidad en tuberías y componentes críticos sin mover la pieza, asegurando la integridad 
-                  estructural de sus instalaciones, incluso en los entornos más desafiantes.</p>
-                
+        <div class="card-ingenieria">
+            <h2>Calidad SMAW Superior</h2>
+            <img src="{{ url_for('static', filename='images/metalmecanica_4.jpg') }}" alt="Soldadura Industrial">
+            <p>Maestría en procesos de unión con electrodo revestido (Stick), logrando acabados uniformes y uniones robustas en materiales industriales.</p>
         </div>
-
-
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Calidad Superior en Cada Proceso de Soldadura Industrial</h2>
-                <img src="{{ url_for('static', filename='images/metalmecanica_4.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>Demostramos maestría en cada proceso de unión. La imagen es un claro ejemplo de la alta calidad y acabado superior 
-                que logramos con soldadura con electrodo revestido (SMAW o 'stick'). Este nivel de precisión en un proceso tan versátil
-                 subraya la experiencia y destreza de nuestro equipo, garantizando uniones robustas, uniformes y fiables en una amplia gama 
-                 de materiales y condiciones de trabajo</p>
-                
-        </div>
-
-
     </section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    }
-});
-</script>
-
-</body>
-</html>
+{% endblock %}

@@ -1,86 +1,38 @@
-<!DOCTYPE html> 
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>W&D Montajes</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <header class="navbar">
-        <a href="" class="logo">W&D</a>
-       <nav class="nav-links">
-        <a href="{{ url_for('index') }}">Inicio</a>
-        <a href="{{ url_for('ingenieria') }}">Ingeniería</a>
-        <a href="{{ url_for('montajes') }}">Montajes</a>
-        <a href="{{ url_for('mecanica') }}">Mecánica</a>
-        <a href="{{ url_for('metalmecanica') }}">Metalmecánica</a>
-        <a href="{{ url_for('energia') }}">Energía</a>
-        <a href="{{ url_for('construccion') }}">Construcción</a>
-        </nav>
-        <div class="hamburger">&#9776;</div> 
-    </header>
+{% extends "base.html" %}
+
+{% block title %}W&D - Montajes{% endblock %}
+
+{% block content %}
 <main class="container">
-    <h1 class="main-title">Proyectos De Montajes</h1>
+    <h1 class="main-title">Proyectos de Montajes</h1>
 
     <section class="projects-grid">  
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Montaje de Estructuras Metálicas: Precisión en Altura </h2>
-                <img src="{{ url_for('static', filename='images/perfileria.jpg') }}" alt="Eléctrico" class="card-image">
-            <p>Ofrecemos soluciones integrales en metalmecánica y construcción con acero. Desde la fabricación en taller hasta 
-                el montaje final, aseguramos la estabilidad y seguridad de cada elemento estructural, proporcionando estructuras robustas y confiables que cumplen con las normativas vigentes</p>
-            </div>                     
+        <div class="card-ingenieria">
+            <h2>Estructuras Metálicas</h2>
+            <img src="{{ url_for('static', filename='images/montaje001.jpeg') }}" alt="Estructuras">
+            <p>Realizamos Montajes de estructuras metálicas con precisión en altura, cumpliendo con los más estrictos estándares de seguridad y diseño.</p>
         </div>
 
-       <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Servicios de Tuberías para el Sector Oil & Gas y Procesos Industriales</h2>
-                <img src="{{ url_for('static', filename='images/tuberia.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>prefabricación, montaje y soldadura de sistemas de tuberías industriales, diseñados para satisfacer las demandas del sector Oil & Gas. 
-                Nuestra capacidad abarca una amplia gama de materiales, incluyendo acero al carbono, aceros inoxidables, cobre y PVC, manejando diferentes espesores de pared (SCH). 
-                </p> 
+        <div class="card-ingenieria">
+            <h2>Servicios de Tuberías para el Sector Oil & Gas y Procesos Industriales</h2>
+            <img src="{{ url_for('static', filename='images/Tuberias001.jpeg') }}" alt="Aislamientos">
+            <p>Desarrollamos soluciones para el sector Oil & Gas, trabajando con acero al carbono,
+                 inoxidables, cobre y PVC. Garantizamos calidad, cumplimiento técnico y adaptabilidad a 
+                 diferentes espesores (SCH)..</p>
         </div>
 
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Sistemas Eficientes de Refrigeración, Escape y Aislamiento</h2>
-                <img src="{{ url_for('static', filename='images/revestimiento.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>Revestimientos Térmicos y Sonoros: Aplicación de aislamientos térmicos (calorifugado) para prevenir la pérdida de calor 
-                y proteger al personal, y la instalación de aislamientos acústicos (insonorización) para la atenuación del ruido industrial,
-                 como se muestra en las tuberías de la imagen</p>
-                
+        <div class="card-ingenieria">
+            <h2>Sistemas Eficientes de Refrigeración, Escape y Aislamiento</h2>
+            <img src="{{ url_for('static', filename='images/aislamiento001.jpeg') }}" alt="Montaje Eléctrico">
+            <p>Aplicamos soluciones de calorifugado e insonorización en sistemas industriales,
+                 reduciendo pérdidas térmicas y niveles de ruido. Garantizamos protección del personal y cumplimiento técnico en cada instalación.</p>
         </div>
-
-        <div class="card card-ingenieria">
-            <div class="card-content-text">
-                <h2>Instalaciones Eléctricas de Baja y Media Tensión</h2>
-                <img src="{{ url_for('static', filename='images/electrico_3.jpg') }}" alt="Eléctrico" class="card-image">
-            </div>
-            <p>soluciones integrales en el ámbito eléctrico industrial y comercial, cubriendo desde el diseño hasta la ejecución
-                 y puesta en marcha. Nos especializamos en montajes eléctricos en baja y media tensión, el armado e instalación de
-                  tableros de control y distribución </p>
-                
-        </div>
-
-
+        <div class="card-ingenieria">
+            <h2>Instalaciones Eléctricas de Baja y Media Tensión</h2>
+            <img src="{{ url_for('static', filename='images/electricos001.jpeg') }}" alt="Montaje Eléctrico">
+            <p>Desarrollamos proyectos eléctricos industriales y comerciales en baja y media tensión, 
+                incluyendo armado e instalación de tableros de control y distribución, garantizando eficiencia, seguridad y cumplimiento normativo.</p>
+        </div>        
     </section>
 </main>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-
-    if (hamburger && navLinks) {
-        hamburger.addEventListener('click', function() {
-            navLinks.classList.toggle('active');
-        });
-    }
-});
-</script>
-
-</body>
-</html>
+{% endblock %}

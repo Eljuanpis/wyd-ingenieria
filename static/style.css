@@ -1,336 +1,125 @@
-/* === Estilos Generales === */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+/* --- 1. BASE --- */
+body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    margin: 0; 
+    background: #f4f4f4; 
     scroll-behavior: smooth;
 }
+.container { max-width: 1200px; margin: 0 auto; padding: 20px; }
 
-/* === SECCIÓN HERO (Corregida y sin repeticiones) === */
-.hero-section {
-    position: relative; 
-    width: 100%;
-    background-color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px 0;
-    overflow: hidden; 
-    min-height: 30vh; /* Altura mínima flexible */
+/* --- 2. NAVBAR --- */
+.navbar { 
+    background: #222; 
+    color: #fff; 
+    padding: 15px 20px; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
 }
-
-.hero-background-image {
-    width: 100%;
-    max-width: 800px;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    object-fit: contain;
-}
-
-/* === Botón de WhatsApp Flotante === */
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 30px;
-    right: 30px;
-    background-color: #25d366;
-    color: #FFF;
-    border-radius: 50px;
-    text-align: center;
-    font-size: 30px;
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-    z-index: 2000;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    transition: transform 0.3s ease;
-}
-
-.whatsapp-float:hover {
-    transform: scale(1.1);
-    color: white;
-}
-
-/* Media Query para móviles */
-@media (max-width: 768px) {
-    .hero-background-image {
-        max-width: 90%;
-    }
-    .hero-section {
-        padding: 10px 0;
-    }
-}
-
-.whatsapp-icon {
-    width: 35px;
-    height: 35px;
-}
-
-/* === Navbar y otros estilos que ya tenías (se mantienen igual) === */
-.navbar {
-    background-color: #333;
-    color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
+.logo { 
     font-size: 1.8em; 
-    font-weight: 900;
-    text-decoration: none;
+    font-weight: 900; 
+    text-decoration: none; 
     background: linear-gradient(90deg, #4CAF50, #78FF7C);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 5px rgba(76, 175, 80, 0.7);
-    transition: transform 0.3s ease-in-out;
 }
-/* ========================= */
+.nav-links a { color: #fff; text-decoration: none; margin-left: 20px; transition: 0.3s; }
+.nav-links a:hover { color: #4CAF50; }
 
-
-.nav-links a {
-    color: white;
-    text-decoration: none;
-    margin-left: 25px;
-    transition: color 0.3s;
+/* --- 3. HERO (Index) --- */
+.hero-section { 
+    background: #fff; 
+    padding: 20px 0; 
+    text-align: center; 
+    min-height: auto; 
 }
-
-.nav-links a:hover {
-    color: #4CAF50; /* Color verde al pasar el mouse */
-}
-
-/* === Menú Hamburguesa (Oculto por defecto) === */
-.hamburger {
-    display: none; 
-    font-size: 2em;
-    cursor: pointer;
+.hero-background-image { 
+    max-width: 600px; 
+    width: 90%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
 }
 
-/* === SECCIÓN HERO === */
-.hero-section {
-    position: relative; 
-    height: 60vh; /* Altura que le diste */
-    overflow: hidden; 
+/* --- 4. SECCIONES DE TEXTO --- */
+.content-section { padding: 40px 20px; max-width: 1000px; margin: 0 auto; text-align: center; }
+.contact-form { text-align: left; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+.contact-form input, .contact-form select, .contact-form textarea { 
+    width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; 
 }
+.submit-button { background: #4CAF50; color: white; border: none; padding: 12px 20px; border-radius: 5px; cursor: pointer; width: 100%; }
 
-.hero-content {
-    /* Asegura que el contenedor base tenga 100% de alto */
-    width: 100%;
+/* --- 5. TARJETAS FLIP (Inicio) --- */
+.project-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 25px; padding: 20px; }
+.card { width: 300px; height: 220px; perspective: 1000px; }
+.card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.6s; transform-style: preserve-3d; }
+.card:hover .card-inner { transform: rotateY(180deg); }
+.card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 15px; overflow: hidden; }
+
+/* Ajuste de imagen en tarjetas flip */
+.card-image { 
+    width: 100%; 
     height: 100%; 
-    position: relative;
+    object-fit: cover; 
+    object-position: center;
 }
 
-.hero-background-image {
-    width: 100%;       /* Ocupa todo el ancho disponible */
-    height: auto;      /* Mantiene la proporción */
-    max-height: 50vh;  /* Evita que sea demasiado alta en móviles */
-    object-fit: contain; /* Asegura que se vea toda la imagen sin cortarse */
+.card-back { 
+    background: #ffc107; 
+    transform: rotateY(180deg); 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 15px; 
+    text-align: center; 
 }
 
-.hero-text-overlay {
-    position: absolute;
-    top: 12%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
-    z-index: 10;
-}
-
-/* === Estilos para Proyectos (Contenedor del Título y Tarjeta) === */
-
-/* Contenedor que agrupa el Título (H3) y la Tarjeta (Card) */
-.project-item {
-    width: 300px; /* Igual al ancho de la tarjeta */
-    margin-bottom: 20px; /* Espacio entre filas */
-    text-align: center;
-}
-
-/* Estilo para el Título fijo */
-.project-item h3 {
-    margin: 0 0 10px 0; /* Espacio entre el título y la tarjeta */
-    font-size: 1.2em;
-    color: #333;
-}
-
-/* Estilos para las imágenes DENTRO de las tarjetas */
-.card-image {
-    width: 100%;
-    height: 100%; 
-    object-fit: cover;
-    opacity: 0.8; 
-    position: absolute; 
-    top: 0;
-    left: 0;
-    z-index: 0;
-}
-
-/* Ajuste del frente de la tarjeta (ahora solo contiene la imagen de fondo) */
-.card-front {
-    /* Mantenemos el fondo azul como respaldo */
-    background-color: #2195f39c; 
-    position: relative;
-    z-index: 1; 
-    /* Aseguramos que la vista frontal ocupe el espacio */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-/* ELIMINAMOS REGLA: .card-front h3 { ... } ya que el h3 está fuera de la tarjeta. */
-
-
-/* === Formulario de Contacto === */
-.contact-form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
-
-.contact-form label, .contact-form input, .contact-form textarea, .contact-form select {
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
-}
-
-.contact-form input[type="text"], 
-.contact-form input[type="email"],
-.contact-form input[type="text"], 
-.contact-form select,
-.contact-form textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; 
-}
-
-.submit-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-top: 15px;
-    transition: background-color 0.3s;
-}
-
-.submit-button:hover {
-    background-color: #45a049;
-}
-
-/* === Estilos de Tarjetas (Efecto Flip RESTAURADO) === */
-.project-container {
-    /* Usamos flex para distribuir los project-item (título + card) */
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.card {
-    width: 300px;
-    height: 200px;
-    perspective: 1000px; 
-    border-radius: 20px; /* Se mantiene el border-radius */
-    overflow: hidden;
-}
-
-.card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.6s;
-    transform-style: preserve-3d;
-}
-
-/* El efecto de volteo al pasar el mouse */
-.card:hover .card-inner {
-    transform: rotateY(180deg);
-}
-
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden; 
-    backface-visibility: hidden;
+/* --- 6. GRID DE PROYECTOS (Páginas Internas: Energía, Mecánica, etc.) --- */
+.main-title { text-align: center; margin: 30px 0; font-size: 2.2em; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+.card-ingenieria { 
+    background: #fff; 
+    padding: 20px; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+    border-top: 6px solid #ffc107; 
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 2px;
-    border-radius: 8px; /* El radio interior de la cara */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
 }
 
-.card-back {
-    background-color: #ffc1075b; 
-    color: #333;
-    transform: rotateY(180deg); 
+/* AJUSTE MAESTRO DE IMÁGENES INTERNAS */
+.card-ingenieria img { 
+    width: 100%; 
+    height: 250px;           /* Altura fija para todas */
+    object-fit: cover;       /* Evita que se estiren o se vean feas */
+    object-position: center; /* Centra la parte importante de la foto */
+    border-radius: 8px; 
+    margin-bottom: 15px; 
 }
 
-.card-back a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
+/* --- 7. BOTÓN WHATSAPP --- */
+.whatsapp-float { 
+    position: fixed; width: 60px; height: 60px; bottom: 30px; right: 30px; 
+    background-color: #25d366; color: #FFF; border-radius: 50px; 
+    display: flex; justify-content: center; align-items: center; 
+    font-size: 30px; box-shadow: 2px 2px 5px rgba(0,0,0,0.3); z-index: 2000; text-decoration: none; 
 }
+.whatsapp-icon { width: 35px; height: 35px; }
 
-/* === Media Queries (Responsiveness) === */
+/* --- 8. RESPONSIVE --- */
+.hamburger { display: none; font-size: 2em; cursor: pointer; color: white; }
 @media (max-width: 768px) {
-    /* Oculta los links del menú y muestra el hamburguesa */
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px; 
-        left: 0;
-        background-color: #333;
-        padding-bottom: 10px;
-        text-align: center;
+    .nav-links { 
+        display: none; flex-direction: column; width: 100%; 
+        position: absolute; top: 65px; left: 0; background: #222; padding: 10px 0; 
     }
-
-    .nav-links.active {
-        display: flex; 
-    }
-
-    .nav-links a {
-        margin: 10px 0;
-        padding: 10px;
-        border-top: 1px solid #444;
-    }
-
-    .hamburger {
-        display: block; 
-    }
-    
-    .project-container {
-        flex-direction: column; 
-        align-items: center;
-    }
-    
-    /* Aseguramos que el contenedor del ítem también use todo el ancho en móvil */
-    .project-item {
-        width: 90%; /* O un ancho que se adapte mejor a la pantalla pequeña */
-        max-width: 300px;
-    }
+    .nav-links.active { display: flex; }
+    .nav-links a { margin: 10px 20px; }
+    .hamburger { display: block; }
 }
