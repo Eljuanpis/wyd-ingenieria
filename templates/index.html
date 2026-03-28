@@ -5,17 +5,52 @@
 {% block content %}
 
 <section id="inicio" class="hero-section">
+    <div class="hero-carousel">
+
+        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/mecanica.jpg') }}');"></div>
+        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/ingenieria001.jpg') }}');"></div>
+        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/mecanica-.jpeg') }}');"></div>
+        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/montaje001.jpeg') }}');"></div> 
+        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/tuberias001.jpg') }}');"></div>   
+         <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/aislamiento001.jpeg') }}');"></div>
+        </div>
+    <div class="hero-overlay"></div> 
+    
     <div class="hero-content">
-        <img src="{{ url_for('static', filename='images/Logowd.jpeg') }}" 
-             alt="Logo W&D Ingeniería" 
-             class="hero-background-image">
-        
-        <div class="hero-text-overlay">
-            <h1>Tu Socio De Principio A Fin</h1>
-            <p>¡Cotiza con nosotros!</p>
+        <div class="hero-static-text">
+            <h1>W&D INGENIERÍA</h1>
+            <p class="hero-subtitle">Tu Socio de Principio a Fin</p>
+            <p class="hero-call-to-action">¡COTIZA CON NOSOTROS!</p>
+            <a href="#contactanos" class="btn-hero-solid">Solicitar Cotización</a>
         </div>
     </div>
+
+    <div class="social-sidebar">
+        <a href="https://wa.me/573123456789" class="social-icon whatsapp" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA">
+        </a>
+        <a href="https://facebook.com/tu_pagina" class="social-icon facebook" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB">
+        </a>
+    </div>
 </section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.carousel-slide');
+        let current = 0;
+
+        function rotate() {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+        }
+
+        // Cambio de imagen cada 6 segundos
+        setInterval(rotate, 6000);
+    });
+</script>
+...
 
 <section id="nosotros" class="content-section">
     <h2>Nosotros / Quiénes Somos</h2>
