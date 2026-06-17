@@ -23,6 +23,12 @@ body {
     z-index: 2000; 
 }
 
+.logo-link {
+    color: #4CAF50;
+    text-decoration: none;
+}
+.logo-link h2 { margin: 0; }
+
 .nav-links { display: flex; gap: 20px; }
 
 .nav-links a { 
@@ -105,8 +111,12 @@ body {
     font-weight: bold;
     transition: 0.3s;
 }
+.btn-hero-solid:hover {
+    background: #45a049;
+    transform: scale(1.05);
+}
 
-/* --- 4. REDES SOCIALES (FIJAS QUE TE SIGUEN) --- */
+/* --- 4. REDES SOCIALES (FIJAS) --- */
 .social-sidebar {
     position: fixed;
     top: 50%;
@@ -130,29 +140,66 @@ body {
 .social-icon img { width: 28px; height: 28px; }
 .social-icon:hover { transform: scale(1.1) translateX(-5px); }
 
-/* --- 5. TARJETAS FLIP (RECUPERADAS) --- */
+/* --- 5. TARJETAS DE SERVICIOS ESTÁTICAS (AQUÍ ESTABA EL ERROR) --- */
 .content-section { padding: 60px 20px; max-width: 1200px; margin: 0 auto; text-align: center; }
 
 .project-container { 
     display: flex; justify-content: center; flex-wrap: wrap; gap: 30px; padding: 20px; 
 }
 
-.card { width: 320px; height: 240px; perspective: 1000px; }
-.card-inner { 
-    position: relative; width: 100%; height: 100%; 
-    transition: transform 0.7s; transform-style: preserve-3d; 
-}
-.card:hover .card-inner { transform: rotateY(180deg); }
-
-.card-front, .card-back { 
-    position: absolute; width: 100%; height: 100%; 
-    backface-visibility: hidden; border-radius: 20px; overflow: hidden; 
+.card-link {
+    text-decoration: none;
+    color: inherit;
 }
 
-.card-image { width: 100%; height: 100%; object-fit: cover; }
-.card-back { 
-    background: #4CAF50; color: white; transform: rotateY(180deg); 
-    display: flex; flex-direction: column; justify-content: center; align-items: center; padding: 25px; 
+.card-estatica {
+    position: relative;
+    width: 320px;
+    height: 240px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.card-estatica:hover {
+    transform: translateY(-10px);
+}
+
+.card-image { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    transition: transform 0.5s ease;
+}
+
+.card-estatica:hover .card-image {
+    transform: scale(1.1);
+}
+
+.card-info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    padding: 15px;
+    box-sizing: border-box;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.card-info-overlay h3 {
+    margin: 0 0 8px 0;
+    color: #4CAF50;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-info-overlay p {
+    margin: 0;
+    font-size: 0.9em;
+    line-height: 1.4;
 }
 
 /* --- 6. GRID DE INGENIERÍA (PÁGINAS INTERNAS) --- */
@@ -179,6 +226,7 @@ body {
     width: 100%; padding: 12px; margin: 8px 0 20px 0; border: 1px solid #ddd; border-radius: 8px; box-sizing: border-box;
 }
 .submit-button { background: #4CAF50; color: white; border: none; padding: 15px; border-radius: 8px; width: 100%; font-weight: 600; cursor: pointer; transition: 0.3s;}
+.submit-button:hover { background: #45a049; }
 
 /* --- 8. FOOTER --- */
 footer { background: #1a1a1a; color: white; text-align: center; padding: 30px; margin-top: 50px;}
@@ -197,10 +245,29 @@ footer { background: #1a1a1a; color: white; text-align: center; padding: 30px; m
         border-top: 1px solid #333;
     }
 
-    .nav-links.active { display: flex; } /* Esta clase se activa con el JS que ya tienes */
+    .nav-links.active { display: flex; } 
     
     .navbar { padding: 15px 20px; }
     .hero-section { height: 100vh; }
     .social-sidebar { right: 10px; }
     .social-icon { width: 45px; height: 45px; }
+}
+
+/* --- ESTILO PARA ENLACES DE CRÉDITO DISCRETOS --- */
+.attribution-link {
+    margin: 4px 0 10px 0; 
+    text-align: center;   
+    line-height: 1;
+}
+
+.attribution-link a {
+    font-size: 0.65rem !important; 
+    color: #b0b0b0 !important;     
+    text-decoration: none !important; 
+    font-weight: normal !important;
+    transition: color 0.3s ease;
+}
+
+.attribution-link a:hover {
+    color: #888888 !important;
 }

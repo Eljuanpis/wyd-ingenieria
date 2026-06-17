@@ -3,17 +3,16 @@
 {% block title %}W&D INGENIERÍA - Tu Socio de Principio a Fin{% endblock %}
 
 {% block content %}
-
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=2">
 <section id="inicio" class="hero-section">
     <div class="hero-carousel">
-
         <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/mecanica.jpg') }}');"></div>
-        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/ingenieria001.jpg') }}');"></div>
-        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/mecanica-.jpeg') }}');"></div>
-        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/montaje001.jpeg') }}');"></div> 
-        <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/tuberias001.jpg') }}');"></div>   
-         <div class="carousel-slide active" style="background-image: url('{{ url_for('static', filename='images/aislamiento001.jpeg') }}');"></div>
-        </div>
+        <div class="carousel-slide" style="background-image: url('{{ url_for('static', filename='images/ingenieria001.jpg') }}');"></div>
+        <div class="carousel-slide" style="background-image: url('{{ url_for('static', filename='images/mecanica-.jpeg') }}');"></div>
+        <div class="carousel-slide" style="background-image: url('{{ url_for('static', filename='images/montaje001.jpeg') }}');"></div> 
+        <div class="carousel-slide" style="background-image: url('{{ url_for('static', filename='images/tuberias001.jpg') }}');"></div>   
+        <div class="carousel-slide" style="background-image: url('{{ url_for('static', filename='images/aislamiento001.jpeg') }}');"></div>
+    </div>
     <div class="hero-overlay"></div> 
     
     <div class="hero-content">
@@ -21,7 +20,7 @@
             <h1>W&D INGENIERÍA</h1>
             <p class="hero-subtitle">Tu Socio de Principio a Fin</p>
             <p class="hero-call-to-action">¡COTIZA CON NOSOTROS!</p>
-            <a href="#contactanos" class="btn-hero-solid">Solicitar Cotización</a>
+            <a href="https://wa.me/573123456789?text=Hola,%20quisiera%20solicitar%20una%20cotizaci%C3%B3n." target="_blank" class="btn-hero-solid">Solicitar Cotización</a>
         </div>
     </div>
 
@@ -46,11 +45,9 @@
             slides[current].classList.add('active');
         }
 
-        // Cambio de imagen cada 6 segundos
         setInterval(rotate, 6000);
     });
 </script>
-...
 
 <section id="nosotros" class="content-section">
     <h2>Nosotros / Quiénes Somos</h2>
@@ -73,127 +70,80 @@
     <h2>Nuestros Servicios</h2>
     <div class="project-container">
         
-        <div class="project-item">
-            <h3>Ingeniería</h3>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/ingenieros.jpg') }}" alt="Ingeniería" class="card-image">
-                    </div>
-                    <div class="card-back">
-                        <p>Planificación, estudios, diseño, mejora, interventoría, maniobras e izajes en obras civiles y mantenimiento.</p>
-                        <a href="{{ url_for('ingenieria') }}">Ver más</a>
-                    </div>
+        <a href="{{ url_for('ingenieria') }}" class="card-link">
+            <div class="card-estatica">
+                <img src="{{ url_for('static', filename='images/ingenieros.jpg') }}" alt="Ingeniería" class="card-image">
+                <div class="card-info-overlay">
+                    <h3>Ingeniería</h3>
+                    <p>Planificación, estudios, diseño, mejora e interventoría.</p>
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="project-item">
-            <h3>Montajes</h3>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/montaje.jpg') }}" alt="Montajes" class="card-image">
-                    </div>
-                    <div class="card-back"> 
-                        <p>Montaje de proyectos metalmecánicos, eléctricos y pipelines para el sector industrial.</p>
-                        <a href="{{ url_for('montajes') }}">Ver más</a>
-                    </div>
+        <a href="{{ url_for('montajes') }}" class="card-link">
+            <div class="card-estatica">
+                <img src="{{ url_for('static', filename='images/montaje.jpg') }}" alt="Montajes" class="card-image">
+                <div class="card-info-overlay">
+                    <h3>Montajes</h3>
+                    <p>Montaje de proyectos metalmecánicos, eléctricos e industriales.</p>
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="project-item">
-            <h3>Mecánica</h3>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/mecanica.jpg') }}" alt="Mecánica" class="card-image">
-                    </div>
-                    <div class="card-back">
-                        <p>Mantenimiento TPM, correctivo y preventivo en sectores industrial, automotriz y oil & gas.</p>
-                        <a href="{{ url_for('mecanica') }}">Ver más</a>
-                    </div>
+        <a href="{{ url_for('mecanica') }}" class="card-link">
+            <div class="card-estatica">
+                <img src="{{ url_for('static', filename='images/mecanica.jpg') }}" alt="Mecánica" class="card-image">
+                <div class="card-info-overlay">
+                    <h3>Mecánica</h3>
+                    <p>Mantenimiento TPM, correctivo y preventivo especializado.</p>
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="project-item">
-            <h3>Metalmecánica</h3>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/metalmecanica.jpg') }}" alt="Metalmecánica" class="card-image">
-                    </div>
-                    <div class="card-back">
-                        <p>Diseño y fabricación de estructuras metálicas y piezas a medida con alta precisión.</p>
-                        <a href="{{ url_for('metalmecanica') }}">Ver más</a>
-                    </div>
+        <a href="{{ url_for('metalmecanica') }}" class="card-link">
+            <div class="card-estatica">
+                <img src="{{ url_for('static', filename='images/metalmecanica.jpg') }}" alt="Metalmecánica" class="card-image">
+                <div class="card-info-overlay">
+                    <h3>Metalmecánica</h3>
+                    <p>Diseño, fabricación y soldadura de estructuras metálicas.</p>
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="project-item">
-            <h3>Energía</h3>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/energia.jpg') }}" alt="Energía" class="card-image">
-                    </div>
-                    <div class="card-back">
-                        <p>Instalación y solución en sistemas de generación y distribución en media y baja tensión.</p>
-                        <a href="{{ url_for('energia') }}">Ver más</a>
-                    </div>
+        <a href="{{ url_for('energia') }}" class="card-link">
+            <div class="card-estatica">
+                <img src="{{ url_for('static', filename='images/energia.jpg') }}" alt="Energía" class="card-image">
+                <div class="card-info-overlay">
+                    <h3>Energía</h3>
+                    <p>Sistemas de generación y distribución en media y baja tensión.</p>
                 </div>
             </div>
-        </div>
+        </a>
 
-        <div class="project-item">
-            <h3>Construcción</h3>
-            <div class="card">
-                <div class="card-inner">
-                    <div class="card-front">
-                        <img src="{{ url_for('static', filename='images/construccion.jpeg') }}" alt="Construcción" class="card-image">
-                    </div>
-                    <div class="card-back">
-                        <p>Obras civiles industriales y residenciales, concreto y estructuras mixtas pesadas o livianas.</p>
-                        <a href="{{ url_for('construccion') }}">Ver más</a>
-                    </div>
+        <a href="{{ url_for('construccion') }}" class="card-link">
+            <div class="card-estatica">
+                <img src="{{ url_for('static', filename='images/construccion.jpeg') }}" alt="Construcción" class="card-image">
+                <div class="card-info-overlay">
+                    <h3>Construcción</h3>
+                    <p>Obras civiles industriales, residenciales y concreto hidráulico.</p>
                 </div>
             </div>
-        </div>
+        </a>
 
     </div>
 </section>
 
-<section id="contactanos" class="content-section">
-    <h2>Contáctanos y Pide tu Cotización</h2>
-    <form action="{{ url_for('contactanos') }}" method="POST" class="contact-form">
-        <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
-
-        <label for="email">Correo Electrónico:</label>
-        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
-
-        <label for="asunto">Asunto:</label>
-        <input type="text" id="asunto" name="asunto" required>
-        
-        <label for="cotizacion">Área de Interés:</label>
-        <select id="cotizacion" name="cotizacion" required>
-            <option value="" disabled selected>Seleccione un área</option>
-            <option value="ingenieria">Ingeniería</option>
-            <option value="mecanica">Mecánica</option>
-            <option value="electrico">Eléctrico / Energía</option>
-            <option value="metalmecanico">Metalmecánico / Montajes</option>
-            <option value="construccion">Construcción</option>
-            <option value="otro">Otro / General</option>
-        </select>
-
-        <label for="mensaje">Mensaje:</label>
-        <textarea id="mensaje" name="mensaje" rows="6" placeholder="Cuéntanos sobre tu proyecto..." required></textarea>
-
-        <button type="submit" class="submit-button">Enviar Solicitud</button>
-    </form>
+<section id="cotizar-whatsapp" class="content-section" style="text-align: center;">
+    <h2>¿Listo para empezar tu proyecto?</h2>
+    <p style="margin-bottom: 30px; color: #666; font-size: 1.1em;">Haz clic en el botón a continuación para hablar directamente con uno de nuestros asesores técnicos y solicitar tu cotización.</p>
+    
+    <a href="https://wa.me/573123456789?text=Hola,%20me%20gustaría%20solicitar%20una%20cotización%20para%20un%20proyecto." 
+       target="_blank" 
+       class="submit-button" 
+       style="background-color: #25D366; display: inline-flex; justify-content: center; align-items: center; gap: 15px; text-decoration: none; width: auto; padding: 15px 50px; border-radius: 50px; font-size: 1.2em;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WA" style="width: 30px; filter: brightness(0) invert(1);">
+        Cotizar por WhatsApp
+    </a>
 </section>
 
 {% endblock %}
